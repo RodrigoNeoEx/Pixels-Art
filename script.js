@@ -60,11 +60,31 @@ function setPixelBoardColor(event) {
   pixelColor.style.backgroundColor = setChoosedColor();
 }
 
+function buttonClear() {
+  const append = document.getElementById('color-palette');
+  const divButton = document.createElement('div');
+  append.appendChild(divButton);
+  const button = document.createElement('button');
+  button.innerText = 'Limpar';
+  button.id = 'clear-board';
+  button.classList = 'allButtons';
+  append.appendChild(button);
+}
+
+function clearBoard() {
+  const clearPixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < clearPixel.length; index += 1) {
+    clearPixel[index].setAttribute('style', 'backgroundColor = rgb(255 , 255 , 255)');
+  }
+}
+
 function listenersOnClick() {
   const colorPalette = document.querySelector('#color-palette');
   colorPalette.addEventListener('click', chooseColorFromPallete);
   const pixelBoardChooser = document.querySelector('#pixel-board');
   pixelBoardChooser.addEventListener('click', setPixelBoardColor);
+  const buttonClearPixel = document.querySelector('#clear-board');
+  buttonClearPixel.addEventListener('click', clearBoard);
 }
 
 window.onload = function () {
@@ -75,5 +95,6 @@ window.onload = function () {
   createRandomRGBColor();
   setPaletteColors();
   setChoosedColor();
+  buttonClear();
   listenersOnClick();
 }
