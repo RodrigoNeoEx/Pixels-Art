@@ -43,3 +43,8 @@ function createBoardLine() {
     document.getElementById('pixel-board').appendChild(div);
   }
 }
+
+window.onload = function () {
+  document.querySelector('#color-palette').firstElementChild
+  .classList.add('selected', 'black');
+}
