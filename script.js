@@ -101,6 +101,22 @@ function buttonSize() {
   append.appendChild(button);
 }
 
+function setLimitToBoardSize() {
+  document.getElementById('generate-board');
+  const inputSize = document.getElementById('board-size').value;
+  if (inputSize === '') {
+    alert('Board inválido!');
+  }
+  if (inputSize < 5) {
+    document.getElementById('board-size').value = 5;
+  }
+  if (inputSize > 50) {
+    document.getElementById('board-size').value = 50;
+  }
+  base = document.querySelector('#board-size').value;
+  createBoardLine();
+}
+
 function listenersOnClick() {
   const colorPalette = document.querySelector('#color-palette');
   colorPalette.addEventListener('click', chooseColorFromPallete);
