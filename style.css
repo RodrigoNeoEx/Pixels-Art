@@ -43,3 +43,20 @@ button {
   float: left;
   width: 60px;
 }
+
+.mario {
+  float: left;
+  position: relative;
+}
+
+body {
+  background-image: url('itsMeMario.png');
+  background-repeat: no-repeat;
+  background-size: 1400px;
+  right: 0px;
+  left: 160px;
+  top: 5px;
+  float: left;
+  position: relative;
+}
+/* img href: href: https://nintendatos.files.wordpress.com/2018/03/super-mario-maker-opinic3b3n.png?w=580 */
