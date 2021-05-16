@@ -78,6 +78,29 @@ function clearBoard() {
   }
 }
 
+function createInput() {
+  const append = document.getElementById('color-palette');
+  const divButton = document.createElement('div');
+  append.appendChild(divButton);
+  const inputNumber = document.createElement('input');
+  inputNumber.setAttribute('type', 'number');
+  inputNumber.setAttribute('min', 1);
+  inputNumber.id = 'board-size';
+  inputNumber.classList = 'allButtons';
+  append.appendChild(inputNumber);
+}
+
+function buttonSize() {
+  const append = document.getElementById('color-palette');
+  const divButton = document.createElement('div');
+  append.appendChild(divButton);
+  const button = document.createElement('button');
+  button.innerText = 'VQV';
+  button.id = 'generate-board';
+  button.classList = 'allButtons';
+  append.appendChild(button);
+}
+
 function listenersOnClick() {
   const colorPalette = document.querySelector('#color-palette');
   colorPalette.addEventListener('click', chooseColorFromPallete);
@@ -85,6 +108,8 @@ function listenersOnClick() {
   pixelBoardChooser.addEventListener('click', setPixelBoardColor);
   const buttonClearPixel = document.querySelector('#clear-board');
   buttonClearPixel.addEventListener('click', clearBoard);
+  const buttonBoardSize = document.querySelector('#generate-board');
+  buttonBoardSize.addEventListener('click', setLimitToBoardSize);
 }
 
 window.onload = function () {
@@ -96,5 +121,7 @@ window.onload = function () {
   setPaletteColors();
   setChoosedColor();
   buttonClear();
+  createInput();
+  buttonSize();
   listenersOnClick();
 }
