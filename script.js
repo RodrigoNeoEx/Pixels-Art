@@ -44,7 +44,36 @@ function createBoardLine() {
   }
 }
 
+function chooseColorFromPallete(event) {
+  document.querySelector('.selected').classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+function setChoosedColor() {
+  const classMover = document.querySelector('.selected');
+  const colorSelected = getComputedStyle(classMover);
+  return colorSelected.backgroundColor;
+}
+
+function setPixelBoardColor(event) {
+  const pixelColor = event.target;
+  pixelColor.style.backgroundColor = setChoosedColor();
+}
+
+function listenersOnClick() {
+  const colorPalette = document.querySelector('#color-palette');
+  colorPalette.addEventListener('click', chooseColorFromPallete);
+  const pixelBoardChooser = document.querySelector('#pixel-board');
+  pixelBoardChooser.addEventListener('click', setPixelBoardColor);
+}
+
 window.onload = function () {
+  createPaletteSquares();
   document.querySelector('#color-palette').firstElementChild
   .classList.add('selected', 'black');
+  createBoardLine();
+  createRandomRGBColor();
+  setPaletteColors();
+  setChoosedColor();
+  listenersOnClick();
 }
