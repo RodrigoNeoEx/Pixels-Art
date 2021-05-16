@@ -1,0 +1,17 @@
+.color-palette {
+  border: black 1px solid;
+  height: 47px;
+  margin-left: 16px;
+  width: 188px;
+}
+
+.color {
+  border: solid black 1px;
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+}
+
+.black {
+  background-color: black;
+}
