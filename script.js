@@ -28,3 +28,18 @@ function setPaletteColors() {
     secondColor = createRandomRGBColor();
   }
 }
+
+let base = 5;
+const pixelBoard = document.getElementById('pixel-board');
+function createBoardLine() {
+  pixelBoard.innerHTML = '';
+  for (let line = 0; line < base; line += 1) {
+    const div = document.createElement('div');
+    for (let colum = 0; colum < base; colum += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      div.appendChild(pixel);
+    }
+    document.getElementById('pixel-board').appendChild(div);
+  }
+}
