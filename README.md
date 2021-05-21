@@ -2,9 +2,9 @@
 
 
 
-####Projeto elaborado e proposto as pessoas estudantes da [<img src="./trybe.png" width="70px" alt="Trybe">][website]
+#### Projeto elaborado e proposto as pessoas estudantes da [<img src="./trybe.png" width="70px" alt="Trybe">][website]
 
-####Projeto executado com aproximadamente 1 mês de curso.
+#### Projeto executado com aproximadamente 1 mês de curso.
 
 #### Este projeto não foi refatorado, permanece com mesma estrura de script, html e css ao projeto feito originalmente.
 
